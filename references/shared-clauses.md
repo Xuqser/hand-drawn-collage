@@ -32,8 +32,16 @@ Never default to 1:1. Never rewrite 4:6 as 2:3 or 16:18 as 8:9 in the prompt —
 
 ## Make It More Minimal
 
-Append this block when the result looks like a detailed painting. For Version C, also use it when the collage fills the bottom panel instead of sitting as a small island on paper.
+Append this block when the result looks like a detailed painting, a photo filter, or a tidy two-panel poster.
 
 ```text
-Reduce visual information further: use no more than six broad shapes, one simple contour per major subject, no small environmental details, no realistic shading, and at least forty percent quiet paper background or empty space.
+Reduce visual information further: use no more than six broad torn-paper shapes, one simple contour per major subject, no facial features, no realistic shading, no straight panel divider, and at least forty percent quiet paper. The scene must look cut from paper, not photographed.
+```
+
+## Too Photographic Or Too Neat
+
+Append this block when likeness, perspective, or a straight seam survives.
+
+```text
+Increase abstraction: replace photographic surfaces with flat irregular paper shards; remove facial likeness and small architecture; overlap the lower torn-paper field into the scene; delete any straight horizontal split, white gutter, or rectangular caption box.
 ```

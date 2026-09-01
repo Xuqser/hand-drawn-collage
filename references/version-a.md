@@ -1,29 +1,31 @@
 # Version A: Poetry Blank Space
 
-Generate one stacked image: hand-drawn scene on top, equal blank paper below, poem in the blank.
+Generate **one continuous vertical collage** at `W:2H`, not two framed photos glued together.
 
 Fill `[ASPECT]` with the source `W:H` and `[STACKED ASPECT]` with `W:(2H)`. 4:3 → 4:6. 16:9 → 16:18. Do not convert those to 2:3 or 8:9.
 
 Write the poem first from [shared-clauses.md](shared-clauses.md), then generate.
 
+The canvas is tall so the lower field has room for paper and type. Do **not** draw a straight seam, white gutter, or second rectangular panel. Scene and paper must overlap through torn shards, like a zine page.
+
 ## Image Prompt
 
 ```text
-Create one image at aspect ratio [STACKED ASPECT], made of two equal panels stacked vertically. Each panel is [ASPECT], the same as the input photograph. If the photo is 4:3, this canvas is 4:6. If the photo is 16:9, this canvas is 16:18. The two halves have the same width and the same height. Do not output 1:1. Do not crop, letterbox, or squeeze.
+Create one continuous vertical paper-collage page at aspect ratio [STACKED ASPECT] (if the photo is 4:3, this page is 4:6; if 16:9, 16:18). Do not output 1:1. Do not crop or squeeze.
 
-Use the input photo as the composition reference for the top panel only.
+This is a single handmade zine page, not two stacked photographs and not a caption under a picture. Do not draw a straight horizontal divider, white gap, or neat rectangular text box.
 
-The top [ASPECT] panel is a minimal hand-drawn paper collage of the input image. Keep the main subject, subject relationships, pose, placement, and essential composition. Include every scene element: [SCENE ELEMENTS]. [PRESERVE: keep the observed protected subject or object colors, their relative lightness, and their separation as distinct color blocks.]
+Upper field: a highly abstracted paper-cut interpretation of the input photo. Reduce the scene to about five to eight large irregular torn-paper color blocks. Keep only the most recognizable placement of [SCENE ELEMENTS]. People and animals are featureless silhouettes — no facial features, hair strands, jewelry, fabric folds, or photographic likeness. Landmarks become two or three flat shards (for example white triangles for sails), not a detailed building. Water, sky, and ground are broad torn sheets, not realistic surfaces. [PRESERVE: keep protected clothing or object hues as distinct flat color blocks, without rendering their material.]
 
-The bottom [ASPECT] panel is equal-height off-white fibrous paper with sparse irregular paper-cut marks only at the edges. Reserve a clean quiet center for typography.
+Lower field: roughly the bottom half of the page is layered cream, tan, and muted color shards with ragged torn edges that overlap the scene above, so the picture melts into paper. Place one large irregular off-white torn piece in that field for type. Leave generous quiet paper.
 
-Preserve only the most recognizable shapes. Keep people and animals as simplified silhouettes. Flat, sparse, poetic, magazine-interior collage.
+If rendering the poem, use exactly: [POEM]. Small quiet serif type on that torn shard only. No quotation marks. Otherwise leave the shard empty and generate no letters.
 
-If rendering the poem, use exactly: [POEM]. Small quiet serif type in the bottom-panel blank. Otherwise leave the blank empty and generate no letters.
+The result should feel sparse, graphic, and slightly unfinished — independent-magazine collage — not a photo filter, not a tidy two-panel poster.
 
-Avoid photographic realism, high detail, complex lighting, precise perspective, 3D rendering, anime, logos, and watermarks.
+Avoid photographic realism, neat alignment, straight seams, captions under a frame, high detail, complex lighting, precise perspective, 3D, anime, logos, and watermarks.
 ```
 
 ## Codex image2
 
-Generate once at `[STACKED ASPECT]` with the user photo as reference. If type is misspelled, regenerate with no letters and return `[POEM]` in the chat.
+Generate once at `[STACKED ASPECT]` with the user photo as a **weak** composition reference (low transformation resistance). If the result looks like a photograph with torn edges, has a straight split, or keeps facial likeness, regenerate once with the "too photographic" clause in [shared-clauses.md](shared-clauses.md).

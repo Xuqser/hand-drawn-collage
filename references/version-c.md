@@ -13,7 +13,7 @@ Create a landscape editorial collage panel on an off-white fibrous paper backgro
 
 Output at aspect ratio [ASPECT], matching the input photograph. Do not output 1:1. Do not output the stacked [STACKED ASPECT] canvas in this step. Do not crop, letterbox, or squeeze. This is the bottom panel only.
 
-Do not paint a full-bleed picture and do not crop into a close-up. Distill the whole input scene into an asymmetric torn-paper collage. Keep relative placement of landscape and foreground. Include every essential scene element as its own flat, irregular paper-cut shape: [SCENE ELEMENTS]. Do not omit background landmarks to enlarge the people.
+Do not paint a full-bleed picture and do not crop into a close-up. Distill the whole scene into five to eight large irregular torn-paper shards on cream paper, not a miniature photograph. People are featureless silhouettes. Landmarks are two or three flat shapes. Keep relative placement of [SCENE ELEMENTS]. Do not omit background landmarks to enlarge the people.
 
 Let the shapes sit on the paper with rough torn edges so they melt into the base color. The cluster must be irregular and open, not a circle, oval, stamp, or vignette.
 

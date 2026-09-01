@@ -13,9 +13,10 @@ Generate a tactile paper-collage page from a supplied photo using Codex image ge
 2. Keep the scene identifiable: landscape and foreground, not a cropped close-up of people.
 3. Lock protected clothing and object colors from this photo only.
 4. Keep the source ratio: B = `W:H`; A and C = `W:2H` with two equal halves (4:3 → 4:6, 16:9 → 16:18). Never default to 1:1.
-5. Prefer irregular torn-paper shapes on quiet paper over a circular stamp or a traced miniature photo.
-6. For A and C, write the poem from the same scene elements; do not use a mood-only line that could fit any picture.
-7. Call a real image-generation tool. Never SVG, canvas, HTML-to-image, or `node_repl` drawing.
+5. Prefer irregular torn-paper shapes and one continuous page over a circular stamp, a traced miniature photo, or two neatly stacked rectangular frames.
+6. Abstract first: featureless silhouettes, a handful of large shards, no photographic likeness. Size still follows `W:H` / `W:2H`.
+7. For A and C, write the poem from the same scene elements; do not use a mood-only line that could fit any picture.
+8. Call a real image-generation tool. Never SVG, canvas, HTML-to-image, or `node_repl` drawing.
 
 ## Runtime
 
@@ -25,7 +26,7 @@ This skill is built for Codex with image2.
 2. Read the matching version file and compile the prompt (fill `[SCENE ELEMENTS]`, `[PRESERVE]`, `[ASPECT]`, `[STACKED ASPECT]`).
 3. Write the A/C poem from the Scene Card before generating, so wording is fixed.
 4. Generate with the supplied photo as the reference image, requesting the exact ratio in the version file.
-5. If the collage zooms, goes circular, drops a scene element, or uses the wrong ratio, regenerate once with the repair clause.
+5. If the result looks photographic, has a straight panel split, goes circular, drops a scene element, or uses the wrong ratio, regenerate once with the matching repair clause.
 6. Return the image plus a short Chinese 创作说明. Do not show the full prompt unless the user asks.
 
 If the host has no image model, return copy-ready prompts and stop. Do not fake an image.
@@ -59,7 +60,7 @@ Triggers: 「带留白、诗句、文字排版」→ A. 「纯手绘、不带文
 
 ### A — Poetry Blank Space
 
-Generate **one** image at `W:2H` (4:3 → 4:6, 16:9 → 16:18). Top half = hand-drawn scene at `W:H`. Bottom half = equal blank paper. Place the already-written poem as small quiet serif type in that blank. If letters come out wrong, regenerate the image with no type and print the poem in the 创作说明.
+Generate **one** continuous page at `W:2H` (4:3 → 4:6, 16:9 → 16:18). Upper field = abstracted collage; lower field = overlapping torn paper for the poem. Do not draw two stacked frames or a white gutter. Place the already-written poem as small quiet serif type on an irregular shard. If letters come out wrong, regenerate with no type and print the poem in the 创作说明.
 
 ### B — Pure Hand-Drawn
 
