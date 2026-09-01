@@ -1,0 +1,4 @@
+interface:
+  display_name: "手绘拼贴 · Hand-Drawn Collage"
+  short_description: "把照片收成极简手绘纸拼贴：诗句留白、纯手绘、或原图对照。"
+  default_prompt: "Use $hand-drawn-collage to generate this photo as a minimal hand-drawn paper collage. If I have not chosen a version, ask: A poetry blank, B pure collage, or C original-plus-collage. Use image generation. Do not draw SVG."
