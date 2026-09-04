@@ -42,6 +42,28 @@ Skill 没有立刻出现时，重启 Codex。
 
 同一张图可以分三次对话各跑 A、B、C，方便对比。
 
+## 生图效果
+
+同一张悉尼港照片，当前版本的 C / A / B：
+
+### C · 原图对照
+
+上半是原图，下半是纸底上的一小簇手绘和诗。
+
+![Version C](examples/version-c.png)
+
+### A · 诗句留白
+
+一整页撕纸拼贴，诗写在下方不规则纸片上。
+
+![Version A](examples/version-a.png)
+
+### B · 纯手绘
+
+整幅都是手绘，不留排版区，没有文字。
+
+![Version B](examples/version-b.png)
+
 ## 仓库结构
 
 ```text
@@ -49,6 +71,10 @@ hand-drawn-collage/
 ├── README.md
 ├── SKILL.md
 ├── agents/openai.yaml
+├── examples/
+│   ├── version-a.png
+│   ├── version-b.png
+│   └── version-c.png
 └── references/
     ├── prompt-templates.md
     ├── shared-clauses.md
@@ -59,4 +85,4 @@ hand-drawn-collage/
 
 ## 关于照片
 
-只把用户这一轮上传的照片当作参考。除非用户要求，不要保存、分享或另行上传原图。
+只把用户这一轮上传的照片当作参考。除非用户要求，不要保存、分享或另行上传原图。`examples/` 里是作者提供的效果样张，仅用于说明三种版本。
