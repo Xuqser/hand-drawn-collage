@@ -1,6 +1,6 @@
 ---
 name: hand-drawn-collage
-description: Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (poetry blank), B (pure collage), or C (original-plus-collage). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 诗句留白, 纯手绘, or 原图对照. Generate with the host image model (image2). Never draw SVG or code illustrations.
+description: Transform a user-supplied photo into a minimal hand-drawn paper-collage illustration in version A (original-plus-collage), B (pure collage), or C (full-page collage with poem). Preserve scene elements, clothing and object colors, and the source aspect ratio. Use when the user asks for photo-to-illustration, editorial paper collage, 原图对照, 纯手绘, or 整页撕纸拼贴. Generate with the host image model (image2). Never draw SVG or code illustrations.
 ---
 
 # Hand-Drawn Collage
@@ -12,9 +12,9 @@ Generate a tactile paper-collage page from a supplied photo using Codex image ge
 1. Identify Version A, B, or C. If unspecified, ask; do not mix them.
 2. Keep the scene identifiable: landscape and foreground, not a cropped close-up of people.
 3. Lock protected clothing and object colors from this photo only.
-4. Keep the source ratio: B = `W:H`; A and C = `W:2H` with two equal halves (4:3 → 4:6, 16:9 → 16:18). Never default to 1:1.
-5. Prefer irregular torn-paper shapes and one continuous page over a circular stamp, a traced miniature photo, or two neatly stacked rectangular frames.
-6. Abstract first: featureless silhouettes, a handful of large shards, no photographic likeness. Size still follows `W:H` / `W:2H`.
+4. Keep the source ratio: B = `W:H`; A = `W:2H` as two equal `W:H` panels; C = `W:2H` as one continuous page (4:3 → 4:6, 16:9 → 16:18). Never default to 1:1.
+5. Prefer irregular torn-paper shapes over a circular stamp or a traced miniature photo. Version C is one continuous page, not two framed panels.
+6. Abstract first: featureless silhouettes, a handful of large shards, no photographic likeness on generated collage. Size still follows `W:H` / `W:2H`.
 7. For A and C, write the poem from the same scene elements; do not use a mood-only line that could fit any picture.
 8. Call a real image-generation tool. Never SVG, canvas, HTML-to-image, or `node_repl` drawing.
 
@@ -41,7 +41,7 @@ Record from this photo only:
 
 - **Scene:** 3–7 elements that make this place recognizable (landscape and foreground).
 - **Preserve:** clothing, accessories, or named objects whose hue must survive.
-- **Size:** source `W:H`; B stays `W:H`; A/C become `W:2H` with equal halves.
+- **Size:** source `W:H`; B stays `W:H`; A is two stacked `W:H` panels (`W:2H`); C is one continuous `W:2H` page.
 - **Gesture:** one main spatial relationship (near/far, lean, horizon, facing).
 
 Never copy colors or objects from examples.
@@ -56,23 +56,23 @@ Shared poem, size, and repair patches: [references/shared-clauses.md](references
 
 ## Variants
 
-Triggers: 「带留白、诗句、文字排版」→ A. 「纯手绘、不带文字」→ B. 「原图对照、上下拼接、纸底融合、不铺满」→ C.
+Triggers: 「原图对照、上半原图、上下拼接、纸底融合、不铺满」→ A. 「纯手绘、不带文字」→ B. 「整页撕纸、诗句留白、不保留原图」→ C.
 
-### A — Poetry Blank Space
+### A — Photo Pair
 
-Generate **one** continuous page at `W:2H` (4:3 → 4:6, 16:9 → 16:18). Upper field = abstracted collage; lower field = overlapping torn paper for the poem. Do not draw two stacked frames or a white gutter. Place the already-written poem as small quiet serif type on an irregular shard. If letters come out wrong, regenerate with no type and print the poem in the 创作说明.
+Do **not** redraw the original photo.
+
+1. Generate only the bottom panel at `W:H` (cream paper, irregular collage cluster, poem in empty paper).
+2. Stack the **unaltered original** above that panel so both halves are the same `W:H` and the sheet is `W:2H`. Join real pixels (image concat / layout). Do not ask image2 to invent the top photo.
+3. If you cannot concat, return the original and the bottom panel as two images plus the stack instruction. Do not deliver a regenerated fake original.
 
 ### B — Pure Hand-Drawn
 
 Generate **one** image at `W:H`. Full-frame collage. No poem, no letters.
 
-### C — Photo Pair
+### C — Full-Page Collage With Poem
 
-Do **not** redraw the original photo.
-
-1. Generate only the bottom panel at `W:H` (cream paper, irregular collage cluster, no letters, or with the poem if type is reliable).
-2. Stack the **unaltered original** above that panel so both halves are the same `W:H` and the sheet is `W:2H`. Join real pixels (image concat / layout). Do not ask image2 to invent the top photo.
-3. If you cannot concat, return the original and the bottom panel as two images plus the stack instruction. Do not deliver a regenerated fake original.
+Generate **one** continuous page at `W:2H` (4:3 → 4:6, 16:9 → 16:18). Upper field = abstracted collage; lower field = overlapping torn paper for the poem. Do not keep the original photograph. Do not draw two stacked frames or a white gutter. Place the already-written poem as small quiet serif type on an irregular shard. If letters come out wrong, regenerate with no type and print the poem in the 创作说明.
 
 ## Color Preservation
 

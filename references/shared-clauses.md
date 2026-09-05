@@ -26,9 +26,10 @@ Color-lock requirement: preserve [SUBJECT]'s [GARMENT OR OBJECT] as [COLOR], and
 Use the source photo's own ratio `W:H`. Do not snap to a preset list. Double the height for A and C; keep the same width.
 
 - Version B: `[ASPECT]` = `W:H` (4:3 stays 4:3, 16:9 stays 16:9).
-- Version A and Version C: `[STACKED ASPECT]` = `W:(2H)`. Two equal halves. 4:3 → 4:6; 16:9 → 16:18; 3:2 → 3:4.
+- Version A: `[STACKED ASPECT]` = `W:(2H)`. Two equal `W:H` panels (original + collage). 4:3 → 4:6; 16:9 → 16:18.
+- Version C: `[STACKED ASPECT]` = `W:(2H)` as one continuous collage page. 4:3 → 4:6; 16:9 → 16:18.
 
-Never default to 1:1. Never rewrite 4:6 as 2:3 or 16:18 as 8:9 in the prompt — keep the doubled-height form so the two halves stay obviously equal to the source.
+Never default to 1:1. Never rewrite 4:6 as 2:3 or 16:18 as 8:9 in the prompt.
 
 ## Make It More Minimal
 
@@ -43,5 +44,5 @@ Reduce visual information further: use no more than six broad torn-paper shapes,
 Append this block when likeness, perspective, or a straight seam survives.
 
 ```text
-Increase abstraction: replace photographic surfaces with flat irregular paper shards; remove facial likeness and small architecture; overlap the lower torn-paper field into the scene; delete any straight horizontal split, white gutter, or rectangular caption box.
+Increase abstraction on generated collage only (Version A bottom panel, Version B, Version C full page). Replace photographic surfaces with flat irregular paper shards; remove facial likeness and small architecture. For Version C, overlap the lower torn-paper field into the scene and delete any straight horizontal split, white gutter, or rectangular caption box. Do not apply this to Version A's unaltered original photo.
 ```
